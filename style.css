@@ -1,0 +1,130 @@
+body {
+    margin: 10%;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 25px;
+    
+}
+
+section {
+    height: 100vh;
+    background: url('photos/lights');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h4 {
+    font-size: 28px;
+}
+
+.frosted-glass-effect {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari browser compatibility */
+}
+
+
+button {
+    padding: 15px;
+    background: linear-gradient(45deg, #41DC8E, #64E381 );
+    border: none;
+    border-radius: 16px;
+    color: black;
+    font-weight: 800;
+    
+}
+
+section div {
+    max-width: 450px;
+}
+
+section h4, p {
+    color: linear-gradient(45deg, #41DC8E, #64E381 );
+    padding: 12px
+   
+}
+
+.card--container {
+    height: 125px;
+    width: 125px;
+    margin: 10px;
+    perspective: 1000px; /* Allows for 3D space for the flip effect */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 1500ms;
+    transform-style: preserve-3d; /* Preserve 3D space for children */
+
+}
+
+.flip {
+   transform: rotateY(180deg); /* Rotate the card on hover */
+}
+
+.card--front, .card--back {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back face when flipped */
+  
+}
+
+.card--front {
+    transform: rotateY(180deg); /* Front face */
+}
+
+.card--back {
+    background: url('photos/newyears');
+    height: 125px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    transform: rotateY(0deg); /* Back face */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--front img {
+    width: 125px;
+    height: 125px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card--front img:hover {
+    height: 300px; 
+    width: 300px;
+    position: absolute;
+    z-index: 1000;
+}
+
+span {
+    position: absolute;
+    background: orange;
+    font-size: 12px;
+}
+
+.card--container:hover {
+    z-index: 1000; /* High z-index to bring the card to front on hover */
+}
+
